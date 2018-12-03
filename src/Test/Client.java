@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Client {
 
 	private static StudentManager ss=new StudentManager();
+	private static CourseManager cc=new CourseManager();
 	private static Scanner input=new Scanner(System.in);
 	
 	public static void main(String[] args) {
@@ -21,7 +22,29 @@ public class Client {
 				}else if(num==5) {
 					printStu();
 				}else if(num==6) {
+					print2();
+					while(true) {
+						System.out.println("请选择");
+						int num2=input.nextInt();
+						if(num2==1) {
+							
+						}else if(num2==2) {
+						
+						}else if(num2==3) {
 					
+						}else if(num2==4) {
+						
+						}else if(num2==5) {
+							
+						}else if(num2==6) {
+				
+						}
+						else if(num2==7) {
+						
+						}else if(num2==8) {
+							break;
+						}
+					}
 				}
 				else if(num==7) {
 					System.out.println("谢谢使用!!!");
@@ -38,6 +61,17 @@ public class Client {
 			System.out.println("5.打印学生");
 			System.out.println("6.课程管理");
 			System.out.println("7.系统退出");
+		}
+		
+		private static void print2() {
+			System.out.println("1.增加课程");
+			System.out.println("2.修改课程");
+			System.out.println("3.删除课程");
+			System.out.println("4.通过学生学号，查询该学生选课情况");
+			System.out.println("5.通过课程号，打印当前课程下面学生信息");
+			System.out.println("6.添加选这门课程的学生");
+			System.out.println("7.删除选择这门课程的学生");
+			System.out.println("8.返回上级菜单");
 		}
 		/**
 		 * 增加学生
