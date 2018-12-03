@@ -89,6 +89,8 @@ public class Client {
 			boolean a=ss.add(stu);
 			System.out.println(a?"增加成功":"增加失败");
 		}
+		
+		
 		/**
 		 * 修改学生信息
 		 */

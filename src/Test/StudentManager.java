@@ -5,7 +5,7 @@ import java.util.List;
 
 public class StudentManager {
 	//创建学生的集合	
-	List<Student> str=new ArrayList();
+	private List<Student> str=new ArrayList();
 		
 		/**
 		 * 增加学生
