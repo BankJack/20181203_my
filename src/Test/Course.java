@@ -1,11 +1,20 @@
 package Test;
 
+import java.util.List;
+
 public class Course {
 	
-	private String name;   //课程名称
+	private String name;   	//课程名称
 	private String id;		//课程编号
+	private List<Student> stu;		//选课的学生的集合
 	
 	
+	public List<Student> getStu() {
+		return stu;
+	}
+	public void setStu(List<Student> stu) {
+		this.stu = stu;
+	}
 	public Course() {
 		super();
 	}
@@ -26,6 +35,46 @@ public class Course {
 	public void setId(String id) {
 		this.id = id;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((stu == null) ? 0 : stu.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Course other = (Course) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (stu == null) {
+			if (other.stu != null)
+				return false;
+		} else if (!stu.equals(other.stu))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Course [name=" + name + ", id=" + id + ", stu=" + stu + "]";
+	}
+	
 	
 	
 }

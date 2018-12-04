@@ -1,11 +1,13 @@
 package Test;
 
+import java.util.List;
+
 public class Student {
-	private String name;
-	private String idCar;
-	private char sex;
-	private int age;
-	private Course course;
+	private String name;	//学生姓名
+	private String idCar;	//学生学号
+	private char sex; 	//学生的性别
+	private int age;   //学生的年龄
+	private List<Course> cou; //学生选课的集合
 	
 	
 	
@@ -82,12 +84,14 @@ public class Student {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public Course getCourse() {
-		return course;
+	
+
+	public List<Course> getCou() {
+		return cou;
 	}
 
-	public void setCourse(Course course) {
-		this.course = course;
+	public void setCou(List<Course> cou) {
+		this.cou = cou;
 	}
 
 	@Override
