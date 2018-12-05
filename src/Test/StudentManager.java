@@ -7,14 +7,23 @@ public class StudentManager {
 	//创建学生的集合	
 	private List<Student> str=new ArrayList();
 	{
-		str.add(new Student("阿龙", "0001", '男', 19));
-		str.add(new Student("阿虎", "0002", '男', 25));
-		str.add(new Student("啊蛇", "0003", '男', 15));
-		str.add(new Student("阿牛", "0004", '男', 30));
-		str.add(new Student("阿猫", "0005", '男', 29));
-		str.add(new Student("阿狗", "0006", '男', 11));
-		str.add(new Student("阿鸡", "0007", '男', 42));
-		str.add(new Student("阿龟", "0008", '男', 33));
+		Student stu=new Student("阿龙", "0001", '男', 19);
+		str.add(stu);
+		stu=new Student("阿虎", "0002", '男', 25);
+		str.add(stu);
+		stu=new Student("啊蛇", "0003", '男', 15);
+		str.add(stu);
+		stu=new Student("阿牛", "0004", '男', 30);
+		str.add(stu);
+		stu=new Student("阿猫", "0005", '男', 29);
+		str.add(stu);
+		stu=new Student("阿狗", "0006", '男', 11);
+		str.add(stu);
+		stu=new Student("阿鸡", "0007", '男', 42);
+		str.add(stu);
+		stu=new Student("阿龟", "0008", '男', 33);
+		str.add(stu);
+		
 	}
 		/**
 		 * 增加学生

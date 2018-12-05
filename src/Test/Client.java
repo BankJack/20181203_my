@@ -1,7 +1,10 @@
 package Test;
+import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 public class Client {
 
+	private static final Set<Course> Course = null;
 	private static StudentManager ss=new StudentManager();
 	private static CourseManager cc=new CourseManager();
 	private static Scanner input=new Scanner(System.in);
@@ -33,14 +36,14 @@ public class Client {
 						}else if(num2==3) {
 							removeCou();
 						}else if(num2==4) {
-						
+							findForStudent();
 						}else if(num2==5) {
-							
+							findStudentforCourse();
 						}else if(num2==6) {
-				
+							addStu();
 						}
 						else if(num2==7) {
-						
+							removeStu();
 						}else if(num2==8) {
 							break;
 						}
@@ -81,7 +84,7 @@ public class Client {
 			String id=input.next();
 			System.out.println("请输入课程名称");
 			String name=input.next();
-			Course cou=new Course(id,name);
+			Course cou=new Course(name,id);
 			System.out.println(cc.add(cou)?"增加成功":"增加失败");
 		}
 		/**
@@ -100,14 +103,75 @@ public class Client {
 				System.out.println("修改成功");
 			}
 		}
-		/*
+		/**
 		 * 删除课程
 		 */
 		private static void removeCou() {
 			System.out.println("请输入需要删除课程的课程号");
 			String id=input.next();
-			System.out.println(cc.remove(id)?"删除成功":"删除失败");
+			boolean a =cc.remove(id);
+			System.out.println(a?"删除成功":"删除失败");
 		}
+		
+		/**
+		 * 通过学生学号，查询该学生选课情况
+		 */
+		private static void findForStudent() {
+			System.out.println("请输入需要查询学生的学号");
+			String idCar=input.next();
+			Student stu=ss.seek(idCar);
+			if(stu==null) {
+				System.out.println("输入错误");
+			}else {
+				List<Course> set=cc.findForStudent(stu);
+			for (Course course : set) {
+				System.out.println(course);
+			}
+			}
+		}
+		
+		/**
+		 * 通过课程号，打印当前课程下面学生信息
+		 */
+		private static void findStudentforCourse() {
+			System.out.println("请输入课程编号");
+			String id=input.next();
+			Set<Student> stu=cc.findStudentforCourse(id);
+			if(stu==null) {
+				System.out.println("输入错误");
+			}else {
+				for (Student student : stu) {
+					System.out.println(student);
+				}
+			}
+		}
+		
+		/**
+		 * 添加选这门课程的学生
+		 */
+		private static void addStu() {
+			System.out.println("请输入需要添加课程的编号");
+			String idCar=input.next();
+			System.out.println("请输入需要添加学生的学号");
+			String id=input.next();
+			Student stu= ss.seek(id);
+			boolean a =cc.addStu(idCar, stu);
+			System.out.println(a?"添加成功":"添加失败");
+			
+		}
+		/**
+		 * 删除选择这门课程的学生
+		 */
+		private static void removeStu() {
+			System.out.println("请输入需要删除课程的编号");
+			String idCar=input.next();
+			System.out.println("请输入需要删除学生的学号");
+			String id=input.next();
+			Student stu= ss.seek(id);
+			boolean a =cc.removeStu(id, stu);
+			System.out.println(a?"删除成功":"删除失败");
+		}
+		
 		
 		/**
 		 * 增加学生
