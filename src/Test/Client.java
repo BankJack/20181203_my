@@ -168,7 +168,7 @@ public class Client {
 			System.out.println("请输入需要删除学生的学号");
 			String id=input.next();
 			Student stu= ss.seek(id);
-			boolean a =cc.removeStu(id, stu);
+			boolean a =cc.removeStu(idCar, stu);
 			System.out.println(a?"删除成功":"删除失败");
 		}
 		

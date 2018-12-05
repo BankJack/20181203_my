@@ -1,5 +1,6 @@
 package Test;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -7,7 +8,7 @@ public class Course {
 	
 	private String name;   	//课程名称
 	private String id;		//课程编号
-	private Set<Student> stu;		//选课的学生的集合
+	private Set<Student> stu=new HashSet<>();		//选课的学生的集合
 	
 	
 	public Set<Student> getStu() {
